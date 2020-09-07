@@ -41,13 +41,14 @@ async function getQuote() {
       quoteText.classList.remove("long-quote");
     }
     quoteText.innerText = data.quoteText;
+    
     // stop Loading
     complete();
   } catch (error) {
     getQuote();
   }
 }
-
+// Tweet Quote
 function tweetQuote() {
   const quote = quoteText.innerText;
   const author = authorText.innerText;

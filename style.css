@@ -33,10 +33,10 @@ body {
   font-size: 2rem;
 }
 .fa-quote-left {
-  font-size: 4rem;
+  font-size: 2rem;
 }
 .fa-quote-right {
-  font-size: 4rem;
+  font-size: 2rem;
 }
 .quote-author {
   margin-top: 15px;
@@ -97,8 +97,12 @@ button:active {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 /* Media Query */
 @media screen and (max-width: 1000px) {
