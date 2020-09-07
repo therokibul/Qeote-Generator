@@ -11,14 +11,20 @@ async function getQuote() {
   const apiUrl =
     "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json";
   try {
-    const response = await fetch( apiUrl);
+    const response = await fetch(apiUrl);
     const data = await response.json();
+
     if (data.quoteAuthor === "") {
       authorText.innerText = "unknown";
     } else {
       authorText.innerText = data.quoteAuthor;
     }
-
+    // Reduce font size
+    if (data.quoteText.length > 120) {
+      quoteText.classList.add("long-qoute");
+    } else {
+      quoteText.classList.remove("long-quote");
+    }
     quoteText.innerText = data.quoteText;
   } catch (error) {
     getQuote();
